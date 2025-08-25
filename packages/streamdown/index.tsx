@@ -65,6 +65,7 @@ export const Streamdown = memo(
     components,
     rehypePlugins,
     remarkPlugins,
+    remarkRehypeOptions,
     className,
     shikiTheme = 'github-light',
     ...props
@@ -94,6 +95,7 @@ export const Streamdown = memo(
               key={`${generatedId}-block_${index}`}
               rehypePlugins={[rehypeKatex, ...(rehypePlugins ?? [])]}
               remarkPlugins={[remarkGfm, remarkMath, ...(remarkPlugins ?? [])]}
+              remarkRehypeOptions={remarkRehypeOptions}
               shouldParseIncompleteMarkdown={shouldParseIncompleteMarkdown}
             />
           ))}
